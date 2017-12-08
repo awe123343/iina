@@ -237,6 +237,8 @@ struct Preference {
 
     static let watchProperties = Key("watchProperties")
 
+    static let savedVideoFilters = Key("savedVideoFilters")
+    static let savedAudioFilters = Key("savedAudioFilters")
   }
 
   // MARK: - Enums
@@ -638,7 +640,9 @@ struct Preference {
     Key.screenshotFormat.rawValue: ScreenshotFormat.png.rawValue,
     Key.screenshotTemplate.rawValue: "%F-%n",
 
-    Key.watchProperties.rawValue: []
+    Key.watchProperties.rawValue: [],
+    Key.savedVideoFilters.rawValue: [],
+    Key.savedAudioFilters.rawValue: []
   ]
 
   static private let ud = UserDefaults.standard
