@@ -502,7 +502,7 @@ class PlayerCore: NSObject {
       }
     } else {
       if let vf = info.flipFilter {
-        let _ = removeVideoFiler(vf)
+        let _ = removeVideoFilter(vf)
         info.flipFilter = nil
       }
     }
@@ -519,7 +519,7 @@ class PlayerCore: NSObject {
       }
     } else {
       if let vf = info.mirrorFilter {
-        let _ = removeVideoFiler(vf)
+        let _ = removeVideoFilter(vf)
         info.mirrorFilter = nil
       }
     }
@@ -664,7 +664,7 @@ class PlayerCore: NSObject {
       info.cropFilter = vf
     } else {
       if let filter = info.cropFilter {
-        let _ = removeVideoFiler(filter)
+        let _ = removeVideoFilter(filter)
         info.unsureCrop = "None"
       }
     }
@@ -731,7 +731,7 @@ class PlayerCore: NSObject {
     return result
   }
 
-  func removeVideoFiler(_ filter: MPVFilter) -> Bool {
+  func removeVideoFilter(_ filter: MPVFilter) -> Bool {
     var result = true
     if let label = filter.label {
       mpv.command(.vf, args: ["del", "@" + label], checkError: false) { result = $0 >= 0 }
